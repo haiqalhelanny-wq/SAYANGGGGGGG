@@ -1,0 +1,49 @@
+*{box-sizing:border-box}
+:root{
+  --pink:#ff5f9e;--hot:#ff3f83;--light:#fff0f7;--soft:#ffd6e8;
+  --text:#5b2941;--white:rgba(255,255,255,.92);
+}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--text);font-family:Poppins,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(255,255,255,.9) 0 3px,transparent 4px),
+    linear-gradient(135deg,#ffc1db,#ffe8f2 45%,#ffb6d3);
+  background-size:70px 70px,auto;min-height:100vh;overflow-x:hidden;
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 0 48%,rgba(255,255,255,.2) 50%,transparent 52%);opacity:.7}
+.hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 20px;position:relative}
+.tiny{letter-spacing:3px;text-transform:uppercase;font-size:.75rem;color:#9c466b}
+h1{font-family:"Dancing Script",cursive;font-size:clamp(4rem,10vw,7.5rem);line-height:.9;margin:10px 0;color:#fff;text-shadow:0 5px 20px rgba(166,35,91,.25)}
+h1 span{color:#fff}
+.subtitle{max-width:680px;font-size:1rem;line-height:1.8;color:#71334e}
+.love-button,.upload-btn{
+  border:0;border-radius:999px;background:linear-gradient(135deg,var(--hot),#ff83b1);color:white;
+  padding:14px 24px;font:600 1rem Poppins;box-shadow:0 10px 25px rgba(190,42,104,.22);cursor:pointer;transition:.2s;
+}
+.love-button:hover,.upload-btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(190,42,104,.3)}
+.cat{position:absolute;font-size:clamp(2rem,5vw,4rem);background:rgba(255,255,255,.65);padding:15px;border-radius:50%;animation:bob 3s ease-in-out infinite}
+.cat-left{left:7%;top:23%}.cat-right{right:7%;bottom:22%;animation-delay:1s;transform:scaleX(-1)}
+.sparkle{position:absolute;color:white;font-size:2rem;animation:twinkle 1.8s infinite alternate}.s1{top:18%;right:25%}.s2{bottom:24%;left:24%;animation-delay:.6s}
+main{max-width:980px;margin:auto;padding:0 18px 70px}
+.card{background:var(--white);border:1px solid rgba(255,255,255,.8);border-radius:32px;padding:38px;margin:28px 0;box-shadow:0 20px 60px rgba(160,45,96,.13);backdrop-filter:blur(8px)}
+.section-title{display:flex;align-items:center;justify-content:center;gap:15px}.section-title h2{font-family:"Dancing Script";font-size:2.8rem;margin:0;color:#b62f67;text-align:center}
+.section-title span{font-size:1.5rem}.message{font-family:"Dancing Script";font-size:1.55rem;line-height:1.65;text-align:center;max-width:800px;margin:28px auto;color:#71334e}
+.signature{text-align:center;font-family:"Dancing Script";font-size:1.45rem;color:#a32d61}
+.hint{text-align:center;color:#8a536b;font-size:.9rem}.upload-btn{display:block;width:max-content;margin:18px auto}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px;margin-top:25px}
+.photo-card{position:relative;aspect-ratio:1/1;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(130,30,75,.12);background:#ffd6e8}
+.photo-card img{width:100%;height:100%;object-fit:cover}.delete-photo{position:absolute;right:8px;top:8px;border:0;border-radius:50%;width:32px;height:32px;background:rgba(255,255,255,.9);color:#b62f67;cursor:pointer}
+.empty-gallery{text-align:center;grid-column:1/-1;padding:35px;border:2px dashed #f3a6c6;border-radius:22px}.big-cat{font-size:4rem}
+.music-section{text-align:center}.music-name{font-weight:600;color:#b62f67}audio{width:min(600px,100%);margin-top:8px}
+.reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:25px}
+.reasons div{background:#fff1f7;border:1px solid #ffd0e2;padding:14px 16px;border-radius:16px}
+.final-love{text-align:center;padding:50px 15px}.cat-big{font-size:3rem}.final-love h2{font-family:"Dancing Script";font-size:3rem;color:#a82d61}.final-love p{font-size:1.2rem}.big-heart{font-size:6rem;color:#ff4b8a;animation:pulse 1.2s infinite}
+footer{text-align:center;padding:25px;color:#91415f;background:rgba(255,255,255,.35)}
+.floating-hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}
+.float-heart{position:absolute;bottom:-30px;color:#ff4d91;opacity:.7;font-size:18px;animation:floatUp linear forwards}
+@keyframes floatUp{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@keyframes bob{50%{transform:translateY(-12px) rotate(4deg)}}
+@keyframes twinkle{to{opacity:.25;transform:scale(1.4) rotate(20deg)}}
+@keyframes pulse{50%{transform:scale(1.13)}}
+@media(max-width:600px){.card{padding:24px 16px}.cat{font-size:2rem}.message{font-size:1.3rem}.section-title h2{font-size:2.3rem}}
